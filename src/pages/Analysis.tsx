@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
 import { TrendingUp, DollarSign, Package, ShoppingCart } from "lucide-react";
 import { format, subDays, startOfDay, endOfDay, startOfMonth, endOfMonth, startOfYear, endOfYear } from "date-fns";
+import { fetchDebtorStats } from "@/lib/debtorStats";
 
 const Analysis = () => {
   const [dateRange, setDateRange] = useState("monthly");
@@ -65,6 +66,7 @@ const Analysis = () => {
         .lte("sales.sale_date", end.toISOString());
 
       // Calculate metrics
+      
       const totalRevenue = salesData?.reduce((sum, sale) => sum + Number(sale.total_amount), 0) || 0;
       const totalCost = salesData?.reduce((sum, sale) => sum + Number(sale.total_cost), 0) || 0;
       const totalProfit = totalRevenue - totalCost;

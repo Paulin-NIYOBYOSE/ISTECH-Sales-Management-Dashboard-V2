@@ -7,11 +7,14 @@ import { Button } from "@/components/ui/button";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { TrendingUp, DollarSign, Package, Users, ShoppingCart } from "lucide-react";
 import { format, subDays, startOfDay, endOfDay, startOfMonth, endOfMonth, startOfYear, endOfYear } from "date-fns";
+import { fetchDebtorStats } from "@/lib/debtorStats";
+
 
 const Dashboard = () => {
   const [dateRange, setDateRange] = useState("daily");
   const [customStartDate, setCustomStartDate] = useState("");
   const [customEndDate, setCustomEndDate] = useState("");
+
 
   const getDateRange = () => {
     const today = new Date();
@@ -220,7 +223,7 @@ const Dashboard = () => {
             <div className="text-2xl font-bold">RWF {stats?.totalRevenue?.toLocaleString() || 0}</div>
             <div className="flex items-center text-sm text-green-600">
               <TrendingUp className="h-3 w-3 mr-1" />
-              From {stats?.salesCount || 0} sales
+              From {stats?.salesCount  || 0} sales
             </div>
           </CardContent>
         </Card>

@@ -20,7 +20,7 @@ const Sales = () => {
   const [selectedProducts, setSelectedProducts] = useState<any[]>([]);
   const [paymentStatus, setPaymentStatus] = useState("pending");
   const [dueDate, setDueDate] = useState("");
-  const [notes, setNotes] = useState("");
+  // const [notes, setNotes] = useState("");
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
@@ -94,7 +94,7 @@ const Sales = () => {
           total_cost: totalCost,
           payment_status: paymentStatus as any,
           due_date: dueDate || null,
-          notes,
+          // notes,
         })
         .select()
         .single();
@@ -138,7 +138,7 @@ const Sales = () => {
       setIsOpen(false);
       resetForm();
       toast({
-        title: "Success",
+        title: "✅ Success",
         description: "Sale created successfully and stock updated",
       });
     },
@@ -192,7 +192,7 @@ const Sales = () => {
       queryClient.invalidateQueries({ queryKey: ["debtors"] });
       queryClient.invalidateQueries({ queryKey: ["dashboard-stats"] });
       toast({
-        title: "Success",
+        title: "✅ Success",
         description: "Sale deleted and stock restored",
       });
     },
@@ -212,7 +212,7 @@ const Sales = () => {
     setSelectedProducts([]);
     setPaymentStatus("pending");
     setDueDate("");
-    setNotes("");
+    // setNotes("");
   };
 
   const addProductToSale = (product: any) => {
@@ -302,25 +302,7 @@ const Sales = () => {
                     required
                   />
                 </div>
-                <div>
-                  <Label htmlFor="customerEmail">Customer Email (Optional)</Label>
-                  <Input
-                    id="customerEmail"
-                    type="email"
-                    value={customerEmail}
-                    onChange={(e) => setCustomerEmail(e.target.value)}
-                    placeholder="customer@email.com"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="customerPhone">Customer Phone (Optional)</Label>
-                  <Input
-                    id="customerPhone"
-                    value={customerPhone}
-                    onChange={(e) => setCustomerPhone(e.target.value)}
-                    placeholder="+250788123456"
-                  />
-                </div>
+      
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -347,14 +329,14 @@ const Sales = () => {
                 </div>
               </div>
 
-              <div>
+              {/* <div>
                 <Label htmlFor="notes">Notes (Optional)</Label>
                 <Input
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="Sale notes..."
                 />
-              </div>
+              </div> */}
 
               <div>
                 <Label>Add Products</Label>
@@ -362,14 +344,14 @@ const Sales = () => {
                   {products?.map((product) => (
                     <Button
                       key={product.id}
-                      type="button"
+                      type="button" 
                       variant="outline"
                       onClick={() => addProductToSale(product)}
                       className="text-left justify-start"
                       disabled={product.stock_quantity === 0}
                     >
                       <Plus className="h-3 w-3 mr-1" />
-                      {product.name} - RWF {product.cost} (Stock: {product.stock_quantity})
+                      {product.name}
                     </Button>
                   ))}
                 </div>

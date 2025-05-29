@@ -45,7 +45,7 @@ const AuthPage = () => {
         });
         if (error) throw error;
         toast({
-          title: "Success!",
+          title: "✅ Success!",
           description: "Check your email for the confirmation link.",
         });
       } else {

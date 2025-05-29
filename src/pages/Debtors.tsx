@@ -87,7 +87,7 @@ const Debtors = () => {
       queryClient.invalidateQueries({ queryKey: ["sales"] });
       queryClient.invalidateQueries({ queryKey: ["dashboard-stats"] });
       toast({
-        title: "Success",
+        title: "✅ Success ",
         description: "Payment marked as received. Profit has been recorded.",
       });
     },

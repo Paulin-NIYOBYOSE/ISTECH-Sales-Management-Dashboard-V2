@@ -54,7 +54,7 @@ const Notes = () => {
       setIsOpen(false);
       resetForm();
       toast({
-        title: "Success",
+        title: "✅ Success",
         description: "Note created successfully",
       });
     },
@@ -80,7 +80,7 @@ const Notes = () => {
       setIsOpen(false);
       resetForm();
       toast({
-        title: "Success",
+        title: "✅ Success",
         description: "Note updated successfully",
       });
     },
@@ -104,7 +104,7 @@ const Notes = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["notes"] });
       toast({
-        title: "Success",
+        title: "✅ Success",
         description: "Note deleted successfully",
       });
     },

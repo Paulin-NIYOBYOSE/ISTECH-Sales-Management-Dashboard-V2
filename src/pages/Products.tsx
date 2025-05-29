@@ -17,7 +17,7 @@ const Products = () => {
   const [editingProduct, setEditingProduct] = useState<any>(null);
   const [formData, setFormData] = useState({
     name: "",
-    description: "",
+    // description: "",
     cost: "",
     stock_quantity: "",
     category: "",
@@ -51,7 +51,7 @@ const Products = () => {
       setIsOpen(false);
       resetForm();
       toast({
-        title: "Success",
+        title: "✅ Success",
         description: "Product created successfully",
       });
     },
@@ -77,7 +77,7 @@ const Products = () => {
       setIsOpen(false);
       resetForm();
       toast({
-        title: "Success",
+        title: "✅ Success",
         description: "Product updated successfully",
       });
     },
@@ -101,7 +101,7 @@ const Products = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
       toast({
-        title: "Success",
+        title: "✅ Success",
         description: "Product deleted successfully",
       });
     },
@@ -117,7 +117,7 @@ const Products = () => {
   const resetForm = () => {
     setFormData({
       name: "",
-      description: "",
+      // description: "",
       cost: "",
       stock_quantity: "",
       category: "",
@@ -130,7 +130,7 @@ const Products = () => {
     setEditingProduct(product);
     setFormData({
       name: product.name,
-      description: product.description || "",
+      // description: product.description || "",
       cost: product.cost.toString(),
       stock_quantity: product.stock_quantity.toString(),
       category: product.category || "",
@@ -192,14 +192,14 @@ const Products = () => {
                 </div>
               </div>
 
-              <div>
+              {/* <div>
                 <Label htmlFor="description">Description</Label>
                 <Textarea
                   id="description"
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 />
-              </div>
+              </div> */}
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
