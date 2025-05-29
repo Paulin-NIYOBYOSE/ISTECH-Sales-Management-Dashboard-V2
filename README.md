@@ -17,16 +17,10 @@ Before you begin, ensure you have the following installed:
 - Git
 - A Supabase account (free tier available)
 
-## Quick Start
-
-### 1. Clone the Repository
+## How to run the project on you local machine
 
 ```bash
-git clone [your-repository-url]
-cd sales-management-system
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repo 
 git clone https://github.com/Paulin-NIYOBYOSE/ISTECH-Sales-Management-Dashboard-V2.git
 
 # Step 2: Navigate to the project directory.
@@ -39,7 +33,7 @@ npm i
 npm run dev
 
 
-##Superbase configuration
+#Superbase configuration
 
 1. **Create your own Supabase project** at [supabase.com](https://supabase.com)
 2. **Replace the credentials** in `src/integrations/supabase/client.ts`:
