@@ -7,9 +7,6 @@ import { Button } from "@/components/ui/button";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { TrendingUp, DollarSign, Package, Users, ShoppingCart } from "lucide-react";
 import { format, subDays, startOfDay, endOfDay, startOfMonth, endOfMonth, startOfYear, endOfYear } from "date-fns";
-import { fetchDebtorStats } from "@/lib/debtorStats";
-
-
 const Dashboard = () => {
   const [dateRange, setDateRange] = useState("daily");
   const [customStartDate, setCustomStartDate] = useState("");
