@@ -386,30 +386,31 @@ const Analysis = () => {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Top Profitable Products</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {analyticsData?.topProducts?.slice(0, 8).map((product, index) => (
-                <div key={product.name} className="flex items-center justify-between p-3 border rounded">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                      <Package className="h-4 w-4 text-blue-600" />
-                    </div>
-                    <span className="font-medium">{product.name}</span>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-bold text-green-600">RWF {product.profit.toLocaleString()}</div>
-                    <div className="text-sm text-gray-500">RWF {product.revenue.toLocaleString()} revenue</div>
-                    <div className="text-xs text-gray-500">{product.quantity} sold</div>
-                  </div>
-                </div>
-              ))}
+<Card>
+  <CardHeader>
+    <CardTitle>Top Profitable Products</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <div className="space-y-4">
+      {analyticsData?.topProducts?.slice(0, 5).map((product, index) => (
+        <div key={product.name} className="flex items-center justify-between p-3 border rounded">
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <Package className="h-4 w-4 text-blue-600" />
             </div>
-          </CardContent>
-        </Card>
+            <span className="font-medium">{product.name}</span>
+          </div>
+          <div className="text-right">
+            <div className="font-bold text-green-600">RWF {product.profit.toLocaleString()}</div>
+            <div className="text-sm text-gray-500">RWF {product.revenue.toLocaleString()} revenue</div>
+            <div className="text-xs text-gray-500">{product.quantity} sold</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </CardContent>
+</Card>
+
       </div>
     </div>
   );
